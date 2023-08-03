@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family:
+      Inter,
+      -apple-system,
+      system-ui,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+  }
+}
+
+/* Link */
+a {
+  font-weight: 600;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+a:active {
+  opacity: 0.7;
+}
+
+/* General */
+#nprogress .bar {
+  background-color: #5d55f2 !important;
+}
+
+/* Header */
+.shining-effect {
+  background: linear-gradient(
+    100deg,
+    rgb(0, 0, 0) 25%,
+    #41347a 30%,
+    #5d55f2 50%,
+    #ffb5f1 60%,
+    rgb(0, 0, 0) 75%
+  );
+  background-repeat: no-repeat;
+  background-size: 350% 100%;
+  animation: shining-effect 4s;
+  color: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes shining-effect {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
