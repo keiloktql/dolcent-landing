@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 // import React from 'react';
 
 // // This class component can only be written in class format,
