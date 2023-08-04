@@ -26,7 +26,8 @@ const FooterNavLinks = ({ variation }) => {
 const Footer = () => {
   return (
     <footer className="bg-gray-25 px-16">
-      <div className="flex justify-between py-14">
+      {/* Top */}
+      <div className="flex justify-between py-14 max-w-screen-xl mx-auto">
         <div>
           <Link
             href="/"
@@ -35,7 +36,7 @@ const Footer = () => {
             Dolcent
           </Link>
           <p className="mt-2 text-gray-600">
-            Make your Dollars and Cents Count.
+            Make your Dollars and Cents Count
           </p>
         </div>
         <div className="ml-32 mr-16 flex flex-auto flex-row justify-evenly">
@@ -43,9 +44,9 @@ const Footer = () => {
           <FooterNavLinks variation="LEGAL" />
         </div>
       </div>
-      <hr className="flex" />
+      <hr className="flex max-w-screen-xl mx-auto" />
       {/* Bottom */}
-      <div className="flex justify-between pb-8 pt-4">
+      <div className="flex justify-between pb-8 pt-4 max-w-screen-xl mx-auto">
         <p className="text-gray-500">
           Copyright &copy; 2023 Tham Kei Lok. All rights reserved.
         </p>
