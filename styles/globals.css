@@ -49,6 +49,7 @@ a:active {
   background-size: 350% 100%;
   animation: shining-effect 4s;
   color: black;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
