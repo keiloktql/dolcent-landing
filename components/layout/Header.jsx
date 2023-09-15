@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <header className="fixed left-0 top-0 z-50 h-20 w-full justify-center bg-[#ffffffb8] backdrop-blur-[20px] backdrop-saturate-[180%]">
-      <div className="m-auto flex h-full w-full max-w-screen-xl justify-between px-16">
+      <div className="m-auto flex h-full w-full max-w-screen-xl justify-between px-6 sm:px-16">
         {/* 1280px */}
         <Link
           onAnimationEnd={() => setLogoAnimation(false)}

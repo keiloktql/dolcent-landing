@@ -25,7 +25,7 @@ const FooterNavLinks = ({ variation }) => {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-25 px-16">
+    <footer className="bg-gray-25 px-6 sm:px-16">
       {/* Top */}
       <div className="flex justify-between py-14 max-w-screen-xl mx-auto">
         <div>

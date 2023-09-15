@@ -1,3 +1,5 @@
+export const SUPPORT_EMAIL = "dolcent.connect@gmail.com";
+
 //URL
 export const BASE_URL = "https://dolcent.netlify.app";
 
