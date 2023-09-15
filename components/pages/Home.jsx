@@ -8,7 +8,7 @@ const HomePage = () => {
     <MainLayout className="flex justify-center items-center">
       <h1
         onAnimationEnd={() => setShiningEffect(false)}
-        className={`font-bold text-display-2xl ${
+        className={`font-bold text-center mx-10 text-display-2xl ${
           shiningEffect ? "shining-effect" : ""
         }`}
       >

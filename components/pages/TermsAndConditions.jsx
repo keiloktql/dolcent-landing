@@ -1,8 +1,15 @@
 import MainLayout from "@/components/layout/MainLayout";
+import { BASE_URL } from "@/config/constants";
 
 const TermsAndConditionsPage = () => {
   return (
-    <MainLayout className="flex flex-col max-w-screen-xl px-16">
+    <MainLayout className="flex flex-col max-w-screen-xl px-16 mx-auto">
+      <p
+        id="app-info"
+        className="font-semibold pt-10 text-gray-400 text-xs text-center hidden"
+      >
+        You are now visiting {`${BASE_URL}/privacy-policy`}
+      </p>
       <h1 className="font-bold text-display-md pt-10">Terms and Conditions</h1>
       <p className="pt-10">
         is simply dummy text of the printing and typesetting industry. Lorem

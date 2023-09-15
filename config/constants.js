@@ -1,3 +1,6 @@
+//URL
+export const BASE_URL = "https://dolcent.netlify.app";
+
 export const BTN_META = {
   PRIMARY: {
     className: "bg-primary text-white"
