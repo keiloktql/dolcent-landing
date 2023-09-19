@@ -8,15 +8,17 @@ import {
   APP_STORE_LISTING_URL,
   PLAY_STORE_LISTING_URL
 } from "@/config/general";
+import BentoBox from "../shared/BentoBox";
+import { OVERVIEW_FEATURES_LIST } from "@/config/enum";
 
 const HomePage = () => {
   const [shiningEffect, setShiningEffect] = useState(true);
 
   return (
-    <MainLayout className="flex pb-20 max-w-screen-xl w-full mx-auto px-6 sm:px-16">
+    <MainLayout className="flex flex-col pb-20 max-w-screen-xl w-full mx-auto px-6 sm:px-16 bg-bg-hero bg-contain bg-no-repeat">
       {/* Hero */}
       <div className="flex flex-col lg:flex-row">
-        <div className="flex flex-col w-full mt-20 md:mt-40 ">
+        <div className="flex flex-col w-full mt-20 lg:mt-0 lg:justify-center">
           <h1
             onAnimationEnd={() => setShiningEffect(false)}
             className={`font-bold text-center md:text-left text-display-md md:text-display-xl ${
@@ -28,7 +30,7 @@ const HomePage = () => {
           <p className="mt-4 text-center md:text-left text-gray-500">
             With Dolcent, you can effortlessly manage your income, expenses, and
             budgets in over 140 currencies, making it easier than ever to take
-            control of your finances.
+            control of your finances. 100% free, with no paywall or ads.
           </p>
           <div className="flex mt-4 flex-row justify-center md:justify-normal">
             <a
@@ -56,6 +58,29 @@ const HomePage = () => {
             alt="screenshot"
           />
         </div>
+      </div>
+      {/* Features */}
+      <div className="mt-20">
+        <h1 className="font-bold text-center text-display-sm md:text-display-md">
+          Powerful Features
+        </h1>
+        <div className="pt-8">
+          {OVERVIEW_FEATURES_LIST.map((oneFeature, index) => (
+            <BentoBox
+              key={index}
+              type={oneFeature.type}
+              imageHref={oneFeature.imageHref}
+              heading={oneFeature.heading}
+              desc={oneFeature.desc}
+              content={oneFeature.content}
+              className={oneFeature.className}
+              textClassName={oneFeature.textClassName}
+            />
+          ))}
+        </div>
+        <h1 className="pt-8 font-semibold text-center text-lg">
+          and many more...
+        </h1>
       </div>
     </MainLayout>
   );

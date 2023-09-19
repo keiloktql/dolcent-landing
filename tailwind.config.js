@@ -7,7 +7,8 @@ module.exports = {
     "./components/**/*.{js,jsx}",
     "./app/**/*.{js,jsx}",
     "./src/**/*.{js,jsx}",
-    "./utils/**/*.{js,jsx}"
+    "./utils/**/*.{js,jsx}",
+    "./config/**/*.{js,jsx}"
   ],
   theme: {
     container: {
@@ -18,6 +19,9 @@ module.exports = {
       }
     },
     extend: {
+      backgroundImage: {
+        "bg-hero": "url('/assets/app/bg-hero.png')"
+      },
       fontSize: {
         "display-2xl": [
           "4.5rem",
