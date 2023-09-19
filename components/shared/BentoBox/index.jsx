@@ -60,7 +60,7 @@ const BentoBox = ({
           return (
             <div
               key={index}
-              className={`flex w-full pt-16 flex-col px-20 bg-gray-100 rounded-xl mt-4 ${oneContent.className}`}
+              className={`flex w-full pt-16 flex-col px-20 bg-gray-100 rounded-xl justify-between mt-4 ${oneContent.className}`}
             >
               <div className="flex flex-col justify-center">
                 <h1
@@ -86,7 +86,7 @@ const BentoBox = ({
         return (
           <div
             key={index}
-            className={`flex w-full md:ml-4 pt-16 flex-col px-20 bg-gray-100 rounded-xl mt-4 ${oneContent.className}`}
+            className={`flex w-full md:ml-4 pt-16 flex-col px-20 bg-gray-100 rounded-xl justify-between mt-4 ${oneContent.className}`}
           >
             <div className="flex flex-col justify-center">
               <h1

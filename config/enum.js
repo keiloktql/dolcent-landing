@@ -74,7 +74,7 @@ export const OVERVIEW_FEATURES_LIST = [
         type: BENTO_BOX_TYPE.SMALL_TEXT_LEFT,
         imageHref: "/assets/app/bento-3.png",
         heading: "Multi Currency Support 🌎",
-        desc: " Track your finances in 140+ currencies.",
+        desc: "Track your finances in 140+ currencies.",
         className: "bg-gray-200"
       },
       {
