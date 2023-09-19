@@ -38,7 +38,7 @@ const Header = () => {
           <SheetContent side="right">
             <nav className="flex flex-col items-center justify-center">
               <Link
-                className="font-semibold text-gray-600  hover:underline"
+                className="font-semibold text-gray-600 hover:underline"
                 href="/"
               >
                 Home

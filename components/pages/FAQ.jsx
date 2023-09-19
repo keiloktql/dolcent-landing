@@ -49,7 +49,7 @@ const AccordionSection = ({ heading, contents, className }) => {
   );
 };
 
-const FAQ = () => {
+const FAQPage = () => {
   return (
     <MainLayout
       title="FAQ - Dolcent"
@@ -102,4 +102,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default FAQPage;
