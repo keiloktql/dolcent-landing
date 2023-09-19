@@ -28,7 +28,7 @@ const AccordionSection = ({ heading, contents, className }) => {
           id={oneFaq.id}
           key={index}
           value={`item-${oneFaq.id}-${index}`}
-          style={{ scrollMarginTop: "80px" }}
+          className="scroll-mt-[80px]"
         >
           <AccordionTrigger className="text-left">
             {oneFaq.qns}
@@ -70,7 +70,7 @@ const FAQ = () => {
       </Accordion>
       <div
         id="contact"
-        className="flex flex-col mt-16 justify-center items-center"
+        className="flex flex-col mt-16 justify-center items-center scroll-mt-[80px]"
       >
         <h1 className="text-display-sm text-center font-bold mt-8">
           Still have Questions?
@@ -83,7 +83,7 @@ const FAQ = () => {
               color="#fff"
             />
           </div>
-          <div className="ml-4">
+          <div className="mt-2 md:mt-0 md:ml-4">
             <p className="text-gray-500 text-center md:text-left">Email</p>
             <a
               className="flex font-bold text-primary items-center"

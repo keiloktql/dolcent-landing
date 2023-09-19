@@ -12,7 +12,7 @@ const HomePage = () => {
           shiningEffect ? "shining-effect" : ""
         }`}
       >
-        Coming soon.
+        Coming soon. ⚡
       </h1>
     </MainLayout>
   );

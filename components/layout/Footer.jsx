@@ -5,8 +5,10 @@ import Image from "next/image";
 import { FOOTER_NAV_LINKS_META } from "@/config/enum";
 import IOSBadge from "@/public/assets/get-it-on/ios-badge.png";
 import AndroidBadge from "@/public/assets/get-it-on/android-badge.png";
+import BMCBadge from "@/public/assets/marketing/bmc-button.png";
 import {
   APP_STORE_LISTING_URL,
+  BUY_ME_A_COFFEE_URL,
   PLAY_STORE_LISTING_URL
 } from "@/config/general";
 
@@ -44,7 +46,7 @@ const Footer = () => {
             Dolcent
           </Link>
           <p className="mt-2 text-gray-600 md:whitespace-nowrap">
-            Make your Dollars and Cents Count
+            Make your Dollars and Cents Count ⚡
           </p>
         </div>
         <div className="mx-auto flex flex-col md:flex-row w-full">
@@ -56,7 +58,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <Image src={IOSBadge} height={40} />
+              <Image src={IOSBadge} height={40} alt="ios" />
             </a>
             <a
               href={PLAY_STORE_LISTING_URL}
@@ -64,7 +66,15 @@ const Footer = () => {
               target="_blank"
               className="mt-2"
             >
-              <Image src={AndroidBadge} height={40} />
+              <Image src={AndroidBadge} height={40} alt="android" />
+            </a>
+            <a
+              href={BUY_ME_A_COFFEE_URL}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="mt-2"
+            >
+              <Image src={BMCBadge} height={40} alt="bmc" />
             </a>
           </div>
         </div>

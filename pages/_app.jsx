@@ -8,11 +8,16 @@ import "@/styles/globals.css";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { useRouter } from "next/router";
-
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 import ErrorBoundary from "@/components/pages/ErrorBoundary";
+import { FIREBASE_CONFIG } from "@/config/general";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+
+  const app = initializeApp(FIREBASE_CONFIG);
+  const analytics = typeof window !== "undefined" ? getAnalytics(app) : null;
 
   useEffect(() => {
     NProgress.configure({ showSpinner: false });

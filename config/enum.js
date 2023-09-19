@@ -21,6 +21,10 @@ export const FOOTER_NAV_LINKS_META = {
       {
         text: "Contact",
         href: "/faq#contact"
+      },
+      {
+        text: "Sitemap",
+        href: "/sitemap"
       }
     ]
   },
