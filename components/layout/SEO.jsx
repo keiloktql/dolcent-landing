@@ -18,6 +18,7 @@ const SEO = ({
       name="google-site-verification"
       content="4-_73DOGpP5CLWnL8D31ck0ZwEJm5PxgSxS5vjFvtMA"
     />
+    <meta name="robots" content="index, follow" />
     <meta name="description" content="Supercharge your Finance Tracking ⚡" />
     <meta property="og:title" content={openGraph.ogTitle} />
     <meta property="og:description" content={openGraph.ogDescription} />
