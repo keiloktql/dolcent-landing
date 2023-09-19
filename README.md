@@ -29,3 +29,9 @@ Dolcent is my passion project, created with a love for software engineering. Joi
 Dolcent is available on the following platforms
 
 [![Download on the App Store](https://github.com/keiloktql/dolcent-landing/blob/master/public/assets/get-it-on/ios-badge.png?raw=true)](https://apps.apple.com/us/app/dolcent/id6466705209) [![Get it on Google Play](https://github.com/keiloktql/dolcent-landing/blob/master/public/assets/get-it-on/android-badge.png?raw=true)](https://play.google.com/store/apps/details?id=com.kl.dolcent)
+
+## Support Dolcent
+
+If you enjoy using Dolcent and would like to support its development, you can [buy me a coffee](https://www.buymeacoffee.com/keiloktql) or send a tip via the Dolcent app (iOS only).
+
+[![Buy me a coffee](https://github.com/keiloktql/dolcent-landing/blob/master/public/assets/marketing/bmc-button.png?raw=true)](https://www.buymeacoffee.com/keiloktql)
