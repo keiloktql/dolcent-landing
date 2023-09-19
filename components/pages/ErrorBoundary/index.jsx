@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/state-in-constructor */
 /* eslint-disable @next/next/no-html-link-for-pages */
 // import React from 'react';
 

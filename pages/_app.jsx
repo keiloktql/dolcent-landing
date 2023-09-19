@@ -4,11 +4,12 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 
 import "@/styles/globals.css";
-import ErrorBoundary from "@/components/pages/ErrorBoundary";
 
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { useRouter } from "next/router";
+
+import ErrorBoundary from "@/components/pages/ErrorBoundary";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
