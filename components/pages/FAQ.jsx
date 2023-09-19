@@ -53,7 +53,7 @@ const FAQ = () => {
   return (
     <MainLayout
       title="FAQ - Dolcent"
-      className="mx-auto pb-20 pt-[80px] flex flex-col h-full w-full max-w-screen-xl px-6 sm:px-16"
+      className="mx-auto pb-20 pt-20 flex flex-col h-full w-full max-w-screen-xl px-6 sm:px-16"
     >
       <h1 className="text-display-sm font-bold">Frequently Asked Questions</h1>
       <Accordion className="w-full mt-8" type="single" collapsible>

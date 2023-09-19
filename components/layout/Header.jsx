@@ -45,12 +45,6 @@ const Header = () => {
               </Link>
               <Link
                 className="mt-4 font-semibold text-gray-600  hover:underline"
-                href="/pricing"
-              >
-                Pricing
-              </Link>
-              <Link
-                className="mt-4 font-semibold text-gray-600  hover:underline"
                 href="/faq"
               >
                 FAQ
@@ -61,12 +55,6 @@ const Header = () => {
         <nav className="w-full h-full items-center hidden md:flex">
           <Link
             className="font-semibold text-gray-600  hover:underline"
-            href="/pricing"
-          >
-            Pricing
-          </Link>
-          <Link
-            className="ml-8 font-semibold text-gray-600  hover:underline"
             href="/faq"
           >
             FAQ
