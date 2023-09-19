@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 import MainLayout from "@/components/layout/MainLayout";
 import Button from "../../shared/Button";
@@ -22,7 +21,7 @@ function Error({ statusCode = 500 }) {
 
   return (
     <MainLayout
-      title={`${statusCode} Error | Dolcent`}
+      title={`${statusCode} Error - Dolcent`}
       className="mx-auto flex w-full max-w-screen-xl flex-col justify-center px-16"
     >
       <p className="font-semibold text-primary">{statusCode} error</p>

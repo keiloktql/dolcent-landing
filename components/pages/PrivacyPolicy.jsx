@@ -1,10 +1,14 @@
+/* eslint-disable arrow-body-style */
 import MainLayout from "@/components/layout/MainLayout";
-import { BASE_URL, SUPPORT_EMAIL } from "@/config/constants";
+import { BASE_URL, SUPPORT_EMAIL } from "@/config/general";
 import DocumentSection from "../shared/DocumentSection";
 
 const PrivacyPolicyPage = () => {
   return (
-    <MainLayout className="flex flex-col max-w-screen-xl px-6 sm:px-16 mx-auto pb-20">
+    <MainLayout
+      title="Privacy Policy - Dolcent"
+      className="flex flex-col max-w-screen-xl px-6 sm:px-16 mx-auto pb-20"
+    >
       <p
         id="app-info"
         className="font-semibold pt-10 text-gray-400 text-xs text-center hidden"

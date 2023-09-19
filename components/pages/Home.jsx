@@ -1,5 +1,5 @@
-import MainLayout from "@/components/layout/MainLayout";
 import React, { useState } from "react";
+import MainLayout from "@/components/layout/MainLayout";
 
 const HomePage = () => {
   const [shiningEffect, setShiningEffect] = useState(true);

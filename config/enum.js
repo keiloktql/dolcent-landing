@@ -1,8 +1,3 @@
-export const SUPPORT_EMAIL = "dolcent.connect@gmail.com";
-
-//URL
-export const BASE_URL = "https://dolcent.netlify.app";
-
 export const BTN_META = {
   PRIMARY: {
     className: "bg-primary text-white"
@@ -25,7 +20,7 @@ export const FOOTER_NAV_LINKS_META = {
       },
       {
         text: "Contact",
-        href: "/contact"
+        href: "/faq#contact"
       }
     ]
   },

@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger
+} from "@/components/shared/Sheet";
 
 const Header = () => {
   const router = useRouter();
@@ -22,21 +31,47 @@ const Header = () => {
         >
           Dolcent
         </Link>
-
-        <ul className="flex w-full h-full items-center">
+        <Sheet>
+          <SheetTrigger>
+            <Menu className="h-6 md:hidden w-6" />
+          </SheetTrigger>
+          <SheetContent side="right">
+            <nav className="flex flex-col items-center justify-center">
+              <Link
+                className="font-semibold text-gray-600  hover:underline"
+                href="/"
+              >
+                Home
+              </Link>
+              <Link
+                className="mt-4 font-semibold text-gray-600  hover:underline"
+                href="/pricing"
+              >
+                Pricing
+              </Link>
+              <Link
+                className="mt-4 font-semibold text-gray-600  hover:underline"
+                href="/faq"
+              >
+                FAQ
+              </Link>
+            </nav>
+          </SheetContent>
+        </Sheet>
+        <nav className="w-full h-full items-center hidden md:flex">
           <Link
-            className={`font-semibold text-gray-600  hover:underline`}
+            className="font-semibold text-gray-600  hover:underline"
             href="/pricing"
           >
             Pricing
           </Link>
           <Link
-            className={`ml-8 font-semibold text-gray-600  hover:underline`}
-            href="/pricing"
+            className="ml-8 font-semibold text-gray-600  hover:underline"
+            href="/faq"
           >
             FAQ
           </Link>
-        </ul>
+        </nav>
       </div>
     </header>
   );

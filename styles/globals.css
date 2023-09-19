@@ -4,6 +4,7 @@
 
 @layer base {
   html {
+    scroll-behavior: smooth;
     font-family:
       Inter,
       -apple-system,
