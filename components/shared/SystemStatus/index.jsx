@@ -3,7 +3,7 @@ import Image from "next/image";
 import SSUp from "@/public/assets/system-status/up.png";
 import SSDown from "@/public/assets/system-status/down.png";
 import SSPaused from "@/public/assets/system-status/paused.png";
-import { Skeleton } from "@/components/shared/skeleton";
+import { Skeleton } from "@/components/shared/Skeleton";
 import { SYSTEM_STATUS_TYPE } from "@/config/enum";
 import { UPTIME_URL } from "@/config/general";
 
