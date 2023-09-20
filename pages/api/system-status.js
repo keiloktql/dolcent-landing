@@ -27,11 +27,17 @@ export default async function handler(req, res) {
     });
     const paused = monitors.some((oneMonitor) => {
       const { status } = oneMonitor.attributes;
-      return status === "paused" || status === "pending";
+      return (
+        status === "paused" || status === "pending" || status === "maintenance"
+      );
+    });
+    const up = monitors.some((oneMonitor) => {
+      const { status } = oneMonitor.attributes;
+      return status === "up";
     });
     if (down) {
       data = SYSTEM_STATUS_TYPE.DOWN;
-    } else if (paused && !down) {
+    } else if (paused && !down && !up) {
       data = SYSTEM_STATUS_TYPE.PAUSED;
     } else {
       data = SYSTEM_STATUS_TYPE.UP;
