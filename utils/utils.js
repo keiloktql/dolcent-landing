@@ -1,4 +1,6 @@
 import { Icon } from "@iconify/react";
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 import get from "lodash/get";
 import {
   EMAIL_INCLUDED_REGEX,
@@ -39,3 +41,7 @@ export const replaceUrlsAndEmailsWithAnchors = (text = "", linkMap = {}) =>
     }
     return str;
   });
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}

@@ -1,4 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6d73d7f2-e4e6-474f-8d95-e1c631e5e54c/deploy-status)](https://app.netlify.com/sites/dolcent/deploys)
+[![Better Stack Badge](https://uptime.betterstack.com/status-badges/v1/monitor/upte.svg)](https://uptime.betterstack.com/?utm_source=status_badge)
 
 # Dolcent - Your Financial Companion
 

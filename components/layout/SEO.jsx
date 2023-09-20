@@ -1,14 +1,14 @@
 import Head from "next/head";
 import React from "react";
-import { BASE_URL } from "@/config/general";
+import { HOST_URL } from "@/config/general";
 
 const SEO = ({
   title = "Dolcent",
   openGraph = {
     ogTitle: "Dolcent",
     ogDescription: "Supercharge your Finance Tracking ⚡",
-    ogImage: `${BASE_URL}/android-chrome-192x192.png`,
-    ogUrl: BASE_URL
+    ogImage: `${HOST_URL}/android-chrome-192x192.png`,
+    ogUrl: HOST_URL
   }
 }) => (
   <Head>

@@ -1,6 +1,6 @@
 /* eslint-disable arrow-body-style */
 import MainLayout from "@/components/layout/MainLayout";
-import { BASE_URL, SUPPORT_EMAIL } from "@/config/general";
+import { HOST_URL, SUPPORT_EMAIL } from "@/config/general";
 import DocumentSection from "../shared/DocumentSection";
 
 const TermsAndConditionsPage = () => {
@@ -13,7 +13,7 @@ const TermsAndConditionsPage = () => {
         id="app-info"
         className="font-semibold pt-10 text-gray-400 text-xs text-center hidden"
       >
-        You are now visiting {`${BASE_URL}/terms-and-conditions`}
+        You are now visiting {`${HOST_URL}/terms-and-conditions`}
       </p>
       <h1 className="font-bold text-display-md pt-10">Terms and Conditions</h1>
 

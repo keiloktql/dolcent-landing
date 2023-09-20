@@ -1,3 +1,5 @@
+import { UPTIME_URL } from "./general";
+
 export const BTN_META = {
   PRIMARY: {
     className: "bg-primary text-white"
@@ -21,6 +23,11 @@ export const FOOTER_NAV_LINKS_META = {
       {
         text: "Contact",
         href: "/faq#contact"
+      },
+      {
+        text: "System Status",
+        href: UPTIME_URL,
+        external: true
       },
       {
         text: "Sitemap",
@@ -94,3 +101,9 @@ export const OVERVIEW_FEATURES_LIST = [
     className: "bg-gray-100"
   }
 ];
+
+export const SYSTEM_STATUS_TYPE = {
+  PAUSED: "PAUSED", // gray
+  DOWN: "DOWN", // yellow
+  UP: "UP" // green
+};

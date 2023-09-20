@@ -30,6 +30,11 @@ export const FAQ_DATA = [
         id: "TOCBB",
         qns: "Who built Dolcent?",
         ans: `Dolcent is developed by ${GITHUB_URL} , a Software Engineering student in Singapore.`
+      },
+      {
+        id: "PPWOV",
+        qns: "What does Dolcent mean?",
+        ans: `Dolcent is a fusion of the words "Dollars" and "Cents," symbolizing its core purpose of helping you manage your financial matters down to the last cent.`
       }
     ]
   },
@@ -45,11 +50,6 @@ export const FAQ_DATA = [
         id: "35MVA",
         qns: "Do I need to create an account to use Dolcent?",
         ans: "No, Dolcent does not require you to create an account. You can start using the app right away."
-      },
-      {
-        id: "K3Y1A",
-        qns: "Can I use Dolcent on multiple devices?",
-        ans: "Currently, Dolcent is designed to be used on a single device. However, you can export your data in JSON format and import it into Dolcent on another device."
       }
     ]
   },
@@ -64,12 +64,17 @@ export const FAQ_DATA = [
       {
         id: "BZ8E5",
         qns: "Is my data safe with Dolcent?",
-        ans: `Yes, your data is stored locally on your device and encrypted with ${REALM_ENCRYPTION_URL} , ensuring the highest level of security.`
+        ans: `Absolutely, your data is securely stored on your device and is never uploaded to the cloud or accessible by the developer. Additionally, it's encrypted with ${REALM_ENCRYPTION_URL}, ensuring the highest level of security for your financial information.`
       },
       {
         id: "664XZ",
         qns: "Can I set a passcode or biometric lock for added security?",
         ans: "Yes, Dolcent offers enhanced security options. You can set a passcode lock and, if your device supports it, use biometric authentication such as Face ID or Touch ID for added protection. You can enable these security features in the app's settings"
+      },
+      {
+        id: "K3Y1A",
+        qns: "Can I use Dolcent on multiple devices?",
+        ans: "Currently, Dolcent is designed to be used on a single device. However, you can export your data in JSON format and import it into Dolcent on another device."
       }
     ]
   },

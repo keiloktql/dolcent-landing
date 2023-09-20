@@ -1,16 +1,19 @@
 /* eslint-disable no-unused-vars */
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { FOOTER_NAV_LINKS_META } from "@/config/enum";
+import axios from "axios";
+import { FOOTER_NAV_LINKS_META, SYSTEM_STATUS_TYPE } from "@/config/enum";
 import IOSBadge from "@/public/assets/get-it-on/ios-badge.png";
 import AndroidBadge from "@/public/assets/get-it-on/android-badge.png";
 import BMCBadge from "@/public/assets/marketing/bmc-button.png";
 import {
+  API_URL,
   APP_STORE_LISTING_URL,
   BUY_ME_A_COFFEE_URL,
   PLAY_STORE_LISTING_URL
 } from "@/config/general";
+import SystemStatus from "../shared/SystemStatus";
 
 const FooterNavLinks = ({ variation, className }) => {
   const { heading, links } = FOOTER_NAV_LINKS_META[variation];
@@ -18,22 +21,56 @@ const FooterNavLinks = ({ variation, className }) => {
     <div className={className}>
       <h1 className="mb-4 text-sm font-semibold text-gray-500">{heading}</h1>
       <span className="flex flex-col">
-        {links.map(({ href, text }, key) => (
-          <Link
-            key={key}
-            className="my-1 font-semibold text-gray-600 first-of-type:mt-0 last-of-type:mb-0 hover:underline"
-            href={href}
-          >
-            {text}
-          </Link>
-        ))}
+        {links.map(({ href, text, external = false }, key) => {
+          if (external) {
+            return (
+              <a
+                key={key}
+                href={href}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="my-1 font-semibold text-gray-600 first-of-type:mt-0 last-of-type:mb-0 hover:underline"
+              >
+                {text}
+              </a>
+            );
+          }
+          return (
+            <Link
+              key={key}
+              className="my-1 font-semibold text-gray-600 first-of-type:mt-0 last-of-type:mb-0 hover:underline"
+              href={href}
+            >
+              {text}
+            </Link>
+          );
+        })}
       </span>
     </div>
   );
 };
 
-// eslint-disable-next-line arrow-body-style
 const Footer = () => {
+  const [systemStatus, setSystemStatus] = useState(null);
+  const [systemStatusLoading, setSystemStatusLoading] = useState(true);
+  useEffect(() => {
+    (async () => {
+      setSystemStatusLoading(true);
+      let tempSystemStatus = SYSTEM_STATUS_TYPE.PAUSED;
+      try {
+        const response = await axios.get(`${API_URL}/system-status`);
+        tempSystemStatus = response?.data?.data;
+        if (!tempSystemStatus) {
+          tempSystemStatus = SYSTEM_STATUS_TYPE.DOWN;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+      setSystemStatus(tempSystemStatus);
+      setSystemStatusLoading(false);
+    })();
+  }, []);
+
   return (
     <footer className="bg-gray-25 px-6 sm:px-16">
       {/* Top */}
@@ -46,8 +83,13 @@ const Footer = () => {
             Dolcent
           </Link>
           <p className="mt-2 text-gray-600 md:whitespace-nowrap">
-            Make your Dollars and Cents Count ⚡
+            Supercharge your Finance Tracking ⚡
           </p>
+          <SystemStatus
+            systemStatus={systemStatus}
+            loading={systemStatusLoading}
+            className="mt-2"
+          />
         </div>
         <div className="mx-auto flex flex-col md:flex-row w-full">
           <FooterNavLinks className="mt-8 md:mt-0" variation="SUPPORT" />

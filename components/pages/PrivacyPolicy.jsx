@@ -1,6 +1,6 @@
 /* eslint-disable arrow-body-style */
 import MainLayout from "@/components/layout/MainLayout";
-import { BASE_URL, SUPPORT_EMAIL } from "@/config/general";
+import { HOST_URL, SUPPORT_EMAIL } from "@/config/general";
 import DocumentSection from "../shared/DocumentSection";
 
 const PrivacyPolicyPage = () => {
@@ -13,7 +13,7 @@ const PrivacyPolicyPage = () => {
         id="app-info"
         className="font-semibold pt-10 text-gray-400 text-xs text-center hidden"
       >
-        You are now visiting {`${BASE_URL}/privacy-policy`}
+        You are now visiting {`${HOST_URL}/privacy-policy`}
       </p>
       <h1 className="font-bold text-display-md pt-10">Privacy Policy</h1>
       <p className="pt-4 font-semibold text-sm">Last updated: September 2023</p>
