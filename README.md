@@ -25,6 +25,8 @@ Welcome to **Dolcent**, your all-in-one finance companion designed to simplify y
 
 Dolcent is my passion project, created with a love for software engineering. Join me on this journey and experience the simplicity of Dolcent while supporting my aspirations as a young developer.
 
+> Fun fact: Dolcent is a fusion of the words "Dollars" and "Cents," symbolizing its core purpose of helping you manage your financial matters down to the last cent.
+
 ## Get Started
 
 Dolcent is available on the following platforms
