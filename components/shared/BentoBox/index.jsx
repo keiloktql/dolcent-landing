@@ -20,7 +20,7 @@ const BentoBox = ({
       >
         <div className="flex flex-col justify-center md:mr-4">
           <h1
-            className={`font-bold text-center md:text-left text-display-sm ${textClassName}`}
+            className={`font-bold text-center md:text-left text-display-xs lg:text-display-sm ${textClassName}`}
           >
             {heading}
           </h1>
@@ -42,7 +42,7 @@ const BentoBox = ({
         </div>
         <div className="flex flex-col justify-center md:ml-4">
           <h1
-            className={`font-bold text-display-sm text-center md:text-right ${textClassName}`}
+            className={`font-bold text-display-xs lg:text-display-sm text-center md:text-right ${textClassName}`}
           >
             {heading}
           </h1>
@@ -52,7 +52,7 @@ const BentoBox = ({
     );
   }
 
-  // BENTO_BOX_TYPE>SMALL
+  // BENTO_BOX_TYPE.SMALL
   return (
     <div className="flex flex-col md:flex-row">
       {content.map((oneContent, index) => {
@@ -60,11 +60,11 @@ const BentoBox = ({
           return (
             <div
               key={index}
-              className={`flex w-full pt-16 flex-col px-20 bg-gray-100 rounded-xl justify-between mt-4 ${oneContent.className}`}
+              className={`flex w-full md:mr-2 pt-16 flex-col px-20 bg-gray-100 rounded-xl justify-between mt-4 ${oneContent.className}`}
             >
               <div className="flex flex-col justify-center">
                 <h1
-                  className={`font-bold text-display-sm text-center ${textClassName}`}
+                  className={`font-bold text-display-xs lg:text-display-sm text-center ${textClassName}`}
                 >
                   {oneContent.heading}
                 </h1>
@@ -86,11 +86,11 @@ const BentoBox = ({
         return (
           <div
             key={index}
-            className={`flex w-full md:ml-4 pt-16 flex-col px-20 bg-gray-100 rounded-xl justify-between mt-4 ${oneContent.className}`}
+            className={`flex w-full md:ml-2 pt-16 flex-col px-20 bg-gray-100 rounded-xl justify-between mt-4 ${oneContent.className}`}
           >
             <div className="flex flex-col justify-center">
               <h1
-                className={`font-bold text-display-sm text-center ${textClassName}`}
+                className={`font-bold text-display-xs lg:text-display-sm text-center ${textClassName}`}
               >
                 {oneContent.heading}
               </h1>
