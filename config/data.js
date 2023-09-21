@@ -7,6 +7,10 @@ import {
   SUPPORT_EMAIL
 } from "./general";
 
+// LOCALSTORAGE KEY
+export const STATUS_CHECK_CACHE_KEY = "STATUS_CHECK_CACHE_KEY";
+
+// DATA
 export const FAQ_DATA = [
   {
     heading: "General",

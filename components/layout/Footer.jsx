@@ -14,6 +14,8 @@ import {
   PLAY_STORE_LISTING_URL
 } from "@/config/general";
 import SystemStatus from "../shared/SystemStatus";
+import { getLocalStorageItem, setLocalStorageItem } from "@/utils/utils";
+import { STATUS_CHECK_CACHE_KEY } from "@/config/data";
 
 const FooterNavLinks = ({ variation, className }) => {
   const { heading, links } = FOOTER_NAV_LINKS_META[variation];
@@ -54,20 +56,46 @@ const Footer = () => {
   const [systemStatus, setSystemStatus] = useState(null);
   const [systemStatusLoading, setSystemStatusLoading] = useState(true);
   useEffect(() => {
+    const updateData = (data, loading) => {
+      setSystemStatus(data);
+      setSystemStatusLoading(loading);
+    };
+    const checkCache = () => {
+      const statusCheckObj = getLocalStorageItem(STATUS_CHECK_CACHE_KEY);
+      const { timestamp, data } = statusCheckObj || {};
+      if (statusCheckObj && timestamp && data) {
+        const currentTime = new Date().getTime();
+        const expirationTime = 5 * 60 * 1000; // 5 minutes in milliseconds
+        const expired = currentTime - timestamp >= expirationTime;
+        if (!expired) {
+          updateData(data, false);
+          return true;
+        }
+      }
+      return false;
+    };
     (async () => {
       setSystemStatusLoading(true);
       let tempSystemStatus = SYSTEM_STATUS_TYPE.PAUSED;
       try {
+        const usedCache = checkCache();
+        if (usedCache) {
+          return;
+        }
         const response = await axios.get(`${API_URL}/system-status`);
         tempSystemStatus = response?.data?.data;
         if (!tempSystemStatus) {
           tempSystemStatus = SYSTEM_STATUS_TYPE.DOWN;
         }
+        const currentTime = new Date().getTime();
+        setLocalStorageItem(STATUS_CHECK_CACHE_KEY, {
+          data: tempSystemStatus,
+          timestamp: currentTime
+        });
       } catch (error) {
         console.log(error);
       }
-      setSystemStatus(tempSystemStatus);
-      setSystemStatusLoading(false);
+      updateData(tempSystemStatus, false);
     })();
   }, []);
 
