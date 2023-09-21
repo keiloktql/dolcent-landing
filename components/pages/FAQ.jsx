@@ -11,6 +11,7 @@ import {
 import {
   APP_STORE_LISTING_URL,
   BUY_ME_A_COFFEE_URL,
+  CANNY_URL,
   GITHUB_URL,
   PLAY_STORE_LISTING_URL,
   REALM_ENCRYPTION_URL,
@@ -40,7 +41,8 @@ const AccordionSection = ({ heading, contents, className }) => {
               [REALM_ENCRYPTION_URL]: "Realm",
               [PLAY_STORE_LISTING_URL]: "Google Play Store",
               [APP_STORE_LISTING_URL]: "Apple App Store",
-              [GITHUB_URL]: "Kei Lok"
+              [GITHUB_URL]: "Kei Lok",
+              [CANNY_URL]: "Canny"
             })}
           </AccordionContent>
         </AccordionItem>

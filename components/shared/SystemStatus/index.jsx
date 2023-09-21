@@ -1,11 +1,17 @@
 import React from "react";
 import Image from "next/image";
+import { Clock8 } from "lucide-react";
 import SSUp from "@/public/assets/system-status/up.png";
 import SSDown from "@/public/assets/system-status/down.png";
 import SSPaused from "@/public/assets/system-status/paused.png";
 import { Skeleton } from "@/components/shared/Skeleton";
 import { SYSTEM_STATUS_TYPE } from "@/config/enum";
 import { UPTIME_URL } from "@/config/general";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger
+} from "@/components/shared/Tooltip";
 
 const SystemStatus = ({ systemStatus, loading, className }) => {
   if (loading) {
@@ -30,15 +36,27 @@ const SystemStatus = ({ systemStatus, loading, className }) => {
   }
 
   return (
-    <a
-      href={UPTIME_URL}
-      rel="noopener noreferrer"
-      target="_blank"
-      className={`flex hover:underline cursor-pointer ${className}`}
-    >
-      <Image style={{ objectFit: "contain" }} src={img} alt="system status" />
-      <p className="ml-2 text-sm font-semibold text-gray-600">{text}</p>
-    </a>
+    <Tooltip>
+      <TooltipTrigger>
+        <a
+          href={UPTIME_URL}
+          rel="noopener noreferrer"
+          target="_blank"
+          className={`flex hover:underline cursor-pointer w-fit ${className}`}
+        >
+          <Image
+            style={{ objectFit: "contain" }}
+            src={img}
+            alt="system status"
+          />
+          <p className="ml-2 text-sm font-semibold text-gray-600">{text}</p>
+        </a>
+      </TooltipTrigger>
+      <TooltipContent className="flex flex-row items-center" side="bottom">
+        <Clock8 height={16} className="text-slate-950 mr-[2px]" />
+        Updated every 5 mins
+      </TooltipContent>
+    </Tooltip>
   );
 };
 

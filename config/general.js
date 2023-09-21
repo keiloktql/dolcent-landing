@@ -25,6 +25,7 @@ export const PLAY_STORE_LISTING_URL =
 export const REALM_ENCRYPTION_URL =
   "https://www.mongodb.com/docs/realm/sdk/react-native/realm-files/encrypt/";
 export const UPTIME_URL = "https://dolcent.betteruptime.com";
+export const CANNY_URL = "https://dolcent.canny.io";
 
 // EMAIL
 export const SUPPORT_EMAIL = "dolcent.connect@gmail.com";

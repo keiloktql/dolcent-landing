@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
+import { Icon } from "@iconify/react";
 import { FOOTER_NAV_LINKS_META, SYSTEM_STATUS_TYPE } from "@/config/enum";
 import IOSBadge from "@/public/assets/get-it-on/ios-badge.png";
 import AndroidBadge from "@/public/assets/get-it-on/android-badge.png";
@@ -31,9 +32,13 @@ const FooterNavLinks = ({ variation, className }) => {
                 href={href}
                 rel="noopener noreferrer"
                 target="_blank"
-                className="my-1 font-semibold text-gray-600 first-of-type:mt-0 last-of-type:mb-0 hover:underline"
+                className="my-1 flex flex-row items-center font-semibold text-gray-600 first-of-type:mt-0 last-of-type:mb-0 hover:underline"
               >
                 {text}
+                <Icon
+                  className="ml-[3px] text-gray-600"
+                  icon="bx:link-external"
+                />
               </a>
             );
           }
@@ -103,14 +108,14 @@ const Footer = () => {
     <footer className="bg-gray-25 px-6 sm:px-16">
       {/* Top */}
       <div className="flex flex-col md:flex-row justify-between py-14 max-w-screen-xl mx-auto">
-        <div className="w-full">
+        <div className="mr-8">
           <Link
             href="/"
             className="font-bold text-transparent text-display-md bg-clip-text bg-gradient-to-r from-secondary via-primary to-accent"
           >
             Dolcent
           </Link>
-          <p className="mt-2 text-gray-600 md:whitespace-nowrap">
+          <p className="mt-2 text-gray-600 lg:whitespace-nowrap">
             Supercharge your Finance Tracking ⚡
           </p>
           <SystemStatus
@@ -119,43 +124,48 @@ const Footer = () => {
             className="mt-2"
           />
         </div>
-        <div className="mx-auto flex flex-col md:flex-row w-full">
-          <FooterNavLinks className="mt-8 md:mt-0" variation="SUPPORT" />
-          <FooterNavLinks className="mt-8 md:mt-0 md:ml-20" variation="LEGAL" />
-          <div className="mt-8 md:mt-0 md:ml-auto flex flex-col">
-            <a
-              href={APP_STORE_LISTING_URL}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <Image src={IOSBadge} height={40} alt="ios" />
-            </a>
-            <a
-              href={PLAY_STORE_LISTING_URL}
-              rel="noopener noreferrer"
-              target="_blank"
-              className="mt-2"
-            >
-              <Image src={AndroidBadge} height={40} alt="android" />
-            </a>
-            <a
-              href={BUY_ME_A_COFFEE_URL}
-              rel="noopener noreferrer"
-              target="_blank"
-              className="mt-2"
-            >
-              <Image src={BMCBadge} height={40} alt="bmc" />
-            </a>
+        <div className="flex flex-col md:flex-row md:justify-center">
+          <div className="flex flex-col">
+            <FooterNavLinks className="mt-8 md:mt-0" variation="PRODUCT" />
+            <FooterNavLinks className="mt-8" variation="SUPPORT" />
           </div>
+          <FooterNavLinks className="mt-8 md:mt-0 md:ml-8" variation="LEGAL" />
+        </div>
+        <div className="w-fit mt-8 md:mt-0 md:ml-10 flex flex-col items-end">
+          <a
+            href={APP_STORE_LISTING_URL}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Image src={IOSBadge} height={40} alt="ios" />
+          </a>
+          <a
+            href={PLAY_STORE_LISTING_URL}
+            rel="noopener noreferrer"
+            target="_blank"
+            className="mt-2"
+          >
+            <Image src={AndroidBadge} height={40} alt="android" />
+          </a>
+          <a
+            href={BUY_ME_A_COFFEE_URL}
+            rel="noopener noreferrer"
+            target="_blank"
+            className="mt-2"
+          >
+            <Image src={BMCBadge} height={40} alt="bmc" />
+          </a>
         </div>
       </div>
       <hr className="flex max-w-screen-xl mx-auto" />
       {/* Bottom */}
       <div className="flex flex-col md:flex-row md:justify-between pb-8 pt-4 max-w-screen-xl mx-auto">
-        <p className="text-gray-500">
+        <p className="text-gray-500 font-medium text-xs md:text-sm">
           Copyright &copy; 2023 Tham Kei Lok. All rights reserved.
         </p>
-        <p className="text-gray-500">Developed in Singapore</p>
+        <p className="text-gray-500 font-medium text-xs md:text-sm">
+          Developed in Singapore
+        </p>
       </div>
     </footer>
   );

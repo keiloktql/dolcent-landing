@@ -12,6 +12,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import ErrorBoundary from "@/components/pages/ErrorBoundary";
 import { ENVIRONMENT, FIREBASE_CONFIG } from "@/config/general";
+import { TooltipProvider } from "@/components/shared/Tooltip";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -31,18 +32,20 @@ export default function App({ Component, pageProps }) {
 
   return (
     <ErrorBoundary>
-      <ToastContainer
-        position="top-right"
-        autoClose={1000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-      <Component {...pageProps} />
+      <TooltipProvider delayDuration={300}>
+        <ToastContainer
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+        <Component {...pageProps} />
+      </TooltipProvider>
     </ErrorBoundary>
   );
 }

@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Menu } from "lucide-react";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger
-} from "@/components/shared/Sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/shared/Sheet";
 
 const Header = () => {
   const router = useRouter();
@@ -19,18 +12,21 @@ const Header = () => {
     <header className="fixed left-0 top-0 z-50 h-20 w-full justify-center bg-[#ffffffb8] backdrop-blur-[20px] backdrop-saturate-[180%]">
       <div className="m-auto flex h-full w-full max-w-screen-xl justify-between px-6 sm:px-16">
         {/* 1280px */}
-        <Link
-          onAnimationEnd={() => setLogoAnimation(false)}
-          className={`w-full flex text-black text-display-sm font-bold items-center ${
-            logoAnimation ? "shining-effect" : ""
-          }`}
-          href="/"
-          onClick={() => {
-            setLogoAnimation(true);
-          }}
-        >
-          Dolcent
-        </Link>
+        <div className="w-full items-center flex">
+          <Link
+            onAnimationEnd={() => setLogoAnimation(false)}
+            className={`text-black text-display-sm font-bold  ${
+              logoAnimation ? "shining-effect" : ""
+            }`}
+            href="/"
+            onClick={() => {
+              setLogoAnimation(true);
+            }}
+          >
+            Dolcent
+          </Link>
+        </div>
+
         <Sheet>
           <SheetTrigger>
             <Menu className="h-6 md:hidden w-6" />

@@ -1,4 +1,4 @@
-import { UPTIME_URL } from "./general";
+import { CANNY_URL, UPTIME_URL } from "./general";
 
 export const BTN_META = {
   PRIMARY: {
@@ -27,6 +27,21 @@ export const FOOTER_NAV_LINKS_META = {
       {
         text: "System Status",
         href: UPTIME_URL,
+        external: true
+      },
+      {
+        text: "Feature Request",
+        href: `${CANNY_URL}/feature-request`,
+        external: true
+      }
+    ]
+  },
+  PRODUCT: {
+    heading: "Product",
+    links: [
+      {
+        text: "Roadmap",
+        href: CANNY_URL,
         external: true
       },
       {
