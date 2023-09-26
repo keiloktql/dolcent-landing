@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import Image from "next/image";
 import MainLayout from "@/components/layout/MainLayout";
@@ -19,9 +20,23 @@ const HomePage = () => {
       {/* Hero */}
       <div className="flex flex-col lg:flex-row">
         <div className="flex flex-col w-full mt-20 lg:mt-0 lg:justify-center">
+          <div className="flex justify-center md:justify-normal">
+            <a
+              href="https://www.producthunt.com/posts/dolcent?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-dolcent"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit block"
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=416235&theme=light"
+                alt="Dolcent - Simple&#0044;&#0032;beautiful&#0032;&#0038;&#0032;user&#0045;friendly&#0032;budget&#0047;expense&#0032;tool | Product Hunt"
+                height="54"
+              />
+            </a>
+          </div>
           <h1
             onAnimationEnd={() => setShiningEffect(false)}
-            className={`font-bold text-center md:text-left text-display-md md:text-display-xl ${
+            className={`font-bold text-center md:text-left text-display-md md:text-display-xl mt-4 ${
               shiningEffect ? "shining-effect" : ""
             }`}
           >
