@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable no-unused-vars */
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -153,7 +154,20 @@ const Footer = () => {
             target="_blank"
             className="mt-2"
           >
-            <Image src={BMCBadge} height={40} alt="bmc" />
+            <Image src={BMCBadge} width={135} height={40} alt="bmc" />
+          </a>
+          <a
+            href="https://www.producthunt.com/products/dolcent?utm_source=badge-follow&utm_medium=badge&utm_souce=badge-dolcent"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="mt-2"
+          >
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=552503&theme=dark"
+              alt="Dolcent - Simple&#0044;&#0032;Beautiful&#0044;&#0032;and&#0032;User&#0045;Friendly&#0032;Budget&#0047;Expense&#0032;Tool | Product Hunt"
+              height="40"
+              width="135"
+            />
           </a>
         </div>
       </div>
