@@ -122,8 +122,20 @@ const Footer = () => {
           <SystemStatus
             systemStatus={systemStatus}
             loading={systemStatusLoading}
-            className="mt-2"
+            className="mt-4"
           />
+          <a
+            href="https://www.producthunt.com/posts/dolcent?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-dolcent"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 w-fit block"
+          >
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=416235&theme=neutral"
+              alt="Dolcent - Simple&#0044;&#0032;beautiful&#0032;&#0038;&#0032;user&#0045;friendly&#0032;budget&#0047;expense&#0032;tool | Product Hunt"
+              height="54"
+            />
+          </a>
         </div>
         <div className="flex flex-col md:flex-row md:justify-center">
           <div className="flex flex-col">
