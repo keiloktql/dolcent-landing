@@ -9,7 +9,7 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator
-} from "@/components/shared/command";
+} from "@/components/shared/Command";
 import { COMMAND_MENU_DATA } from "@/config/data";
 
 const CommandMenu = () => {
