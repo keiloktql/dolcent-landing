@@ -1,6 +1,7 @@
 /* eslint-disable arrow-body-style */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
+import { useRouter } from "next/router";
 import MainLayout from "@/components/layout/MainLayout";
 import {
   Accordion,
@@ -20,15 +21,28 @@ import {
 import { replaceUrlsAndEmailsWithAnchors } from "@/utils/utils";
 import { FAQ_DATA } from "@/config/data";
 
-const AccordionSection = ({ heading, contents, className }) => {
+const AccordionSection = ({
+  heading,
+  contents,
+  className,
+  selectedAccordion,
+  setSelectedAccordion
+}) => {
   return (
     <div className={className}>
       <h2 className="text-display-xs font-bold">{heading}</h2>
       {contents.map((oneFaq, index) => (
         <AccordionItem
+          onClick={() => {
+            if (oneFaq.id === selectedAccordion) {
+              setSelectedAccordion(null);
+            } else {
+              setSelectedAccordion(oneFaq.id);
+            }
+          }}
           id={oneFaq.id}
           key={index}
-          value={`item-${oneFaq.id}-${index}`}
+          value={oneFaq.id}
           className="scroll-mt-[80px]"
         >
           <AccordionTrigger className="text-left">
@@ -52,6 +66,20 @@ const AccordionSection = ({ heading, contents, className }) => {
 };
 
 const FAQPage = () => {
+  const [urlFragment, setUrlFragment] = useState(null);
+  const [selectedAccordion, setSelectedAccordion] = useState(null);
+  const router = useRouter();
+
+  const onHashChangeStart = () => {
+    if (window.location.hash) {
+      setUrlFragment(window.location.hash.substring(1));
+    }
+  };
+
+  useEffect(() => {
+    onHashChangeStart();
+  }, [router.asPath]);
+
   return (
     <MainLayout
       title="FAQ - Dolcent"
@@ -60,7 +88,15 @@ const FAQPage = () => {
       <h1 className="text-display-sm text-primary font-bold">
         Frequently Asked Questions
       </h1>
-      <Accordion className="w-full mt-8" type="single" collapsible>
+      <Accordion
+        className="w-full mt-8"
+        type="single"
+        collapsible
+        value={urlFragment || selectedAccordion}
+        onValueChange={() => {
+          setUrlFragment(null);
+        }}
+      >
         {FAQ_DATA.map((oneFAQSection, index) => {
           return (
             <AccordionSection
@@ -68,10 +104,13 @@ const FAQPage = () => {
               heading={oneFAQSection.heading}
               contents={oneFAQSection.contents}
               className="mt-8"
+              selectedAccordion={selectedAccordion}
+              setSelectedAccordion={setSelectedAccordion}
             />
           );
         })}
       </Accordion>
+
       <div
         id="contact"
         className="flex flex-col mt-16 justify-center items-center scroll-mt-[80px]"

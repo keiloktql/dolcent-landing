@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/shared/Sheet";
+import CommandMenu from "../shared/CommandMenu";
 
 const Header = () => {
   const router = useRouter();
@@ -48,13 +49,16 @@ const Header = () => {
             </nav>
           </SheetContent>
         </Sheet>
-        <nav className="w-full h-full items-center hidden md:flex">
+        <nav className="w-full h-full justify-between items-center hidden md:flex">
           <Link
             className="font-semibold text-gray-600  hover:underline"
             href="/faq"
           >
             FAQ
           </Link>
+          <div className="w-full flex-1 md:w-auto md:flex-none">
+            <CommandMenu />
+          </div>
         </nav>
       </div>
     </header>

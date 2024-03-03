@@ -75,7 +75,7 @@ const HomePage = () => {
         </div>
       </div>
       {/* Features */}
-      <div className="mt-20">
+      <div id="features" className="mt-20">
         <h1 className="font-bold text-center text-display-sm md:text-display-md">
           Powerful Features
         </h1>

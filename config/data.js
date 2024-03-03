@@ -109,3 +109,34 @@ export const FAQ_DATA = [
     ]
   }
 ];
+
+export const COMMAND_MENU_DATA = {
+  mainNav: [
+    {
+      title: "Features",
+      href: "/#features"
+    },
+    {
+      title: "FAQ",
+      href: "/faq"
+    }
+  ],
+  faqNav: [
+    {
+      title: "FAQ",
+      items: (() => {
+        const newItemsArr = [];
+        FAQ_DATA.forEach((oneFAQSection) =>
+          oneFAQSection.contents.forEach((oneFAQ) =>
+            newItemsArr.push({
+              title: oneFAQ.qns,
+              href: `/faq#${oneFAQ.id}`,
+              items: []
+            })
+          )
+        );
+        return newItemsArr;
+      })()
+    }
+  ]
+};
