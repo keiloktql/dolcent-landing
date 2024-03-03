@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/shared/Sheet";
-import CommandMenu from "../shared/CommandMenu";
+import CommandMenu from "@/components/shared/CommandMenu";
 
 const Header = () => {
   const router = useRouter();
