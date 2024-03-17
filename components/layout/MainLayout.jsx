@@ -7,9 +7,7 @@ const MainLayout = ({ children, title, className }) => (
   <>
     <SEO title={title} />
     <Header />
-    <main className={`mt-20 min-h-[calc(100vh-80px)] ${className}`}>
-      {children}
-    </main>
+    <main className={`min-h-[calc(100vh-80px)] ${className}`}>{children}</main>
     <Footer />
   </>
 );
