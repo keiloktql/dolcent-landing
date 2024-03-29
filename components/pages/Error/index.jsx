@@ -1,10 +1,12 @@
 import React from "react";
+import { useRouter } from "next/router";
 import MainLayout from "@/components/layout/MainLayout";
 import Button from "../../shared/Button";
 
 function Error({ statusCode = 500 }) {
   let header = "";
   let desc = "";
+  const router = useRouter();
 
   switch (statusCode) {
     case 404: {
@@ -27,7 +29,9 @@ function Error({ statusCode = 500 }) {
       <p className="font-semibold text-primary">{statusCode} error</p>
       <h1 className="text-display-xl font-semibold text-gray-900">{header}</h1>
       <p className="text-xl text-gray-600">{desc}</p>
-      <Button customClassName="mt-4 w-fit">Take me home</Button>
+      <Button customClassName="mt-4 w-fit" onClickFn={() => router}>
+        Take me home
+      </Button>
     </MainLayout>
   );
 }
