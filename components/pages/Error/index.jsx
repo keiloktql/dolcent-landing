@@ -29,7 +29,7 @@ function Error({ statusCode = 500 }) {
       <p className="font-semibold text-primary">{statusCode} error</p>
       <h1 className="text-display-xl font-semibold text-gray-900">{header}</h1>
       <p className="text-xl text-gray-600">{desc}</p>
-      <Button customClassName="mt-4 w-fit" onClickFn={() => router}>
+      <Button customClassName="mt-4 w-fit" onClickFn={() => router.push("/")}>
         Take me home
       </Button>
     </MainLayout>
