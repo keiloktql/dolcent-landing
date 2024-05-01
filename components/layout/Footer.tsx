@@ -15,9 +15,9 @@ import {
   BUY_ME_A_COFFEE_URL,
   PLAY_STORE_LISTING_URL
 } from "@/lib/config";
-import SystemStatus from "../shared/SystemStatus";
 import { getLocalStorageItem, setLocalStorageItem } from "@/lib/utils";
 import { STATUS_CHECK_CACHE_KEY } from "@/lib/data";
+import SystemStatus from "../shared/SystemStatus";
 
 interface FooterNavLinksProps {
   variation: string;
