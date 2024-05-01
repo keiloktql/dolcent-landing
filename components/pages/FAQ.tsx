@@ -19,7 +19,7 @@ import {
   SUPPORT_EMAIL
 } from "@/lib/config";
 import { FAQ_DATA } from "@/lib/data";
-import { replaceUrlsAndEmailsWithAnchors } from "@/lib/specialUtils";
+import { replaceUrlsAndEmailsWithAnchors } from "@/lib/SpecialUtils";
 
 const AccordionSection = ({
   heading,
