@@ -9,12 +9,23 @@
 // // However, they do NOT catch all types of errors
 // // More information here: https://reactjs.org/docs/error-boundaries.html
 
-import React from "react";
+import React, { ReactNode } from "react";
 
-export default class ErrorBoundary extends React.Component {
+interface ErrorBoundaryProps {
+  children: ReactNode;
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+}
+
+export default class ErrorBoundary extends React.Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
   state = { hasError: false };
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError(error: Error) {
     console.log(error);
     // Update state so the next render will show the fallback UI.
     return { hasError: true };
