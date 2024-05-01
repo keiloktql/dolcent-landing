@@ -2,6 +2,16 @@ import Head from "next/head";
 import React from "react";
 import { HOST_URL } from "@/lib/config";
 
+interface SEOProps {
+  title?: string;
+  openGraph?: {
+    ogTitle?: string;
+    ogDescription?: string;
+    ogImage?: string;
+    ogUrl?: string;
+  };
+}
+
 const SEO = ({
   title = "Dolcent",
   openGraph = {
@@ -10,7 +20,7 @@ const SEO = ({
     ogImage: `${HOST_URL}/android-chrome-192x192.png`,
     ogUrl: HOST_URL
   }
-}) => (
+}: SEOProps) => (
   <Head>
     <meta charSet="utf-8" />
     <title>{title}</title>

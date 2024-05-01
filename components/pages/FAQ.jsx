@@ -18,7 +18,7 @@ import {
   REALM_ENCRYPTION_URL,
   SUPPORT_EMAIL
 } from "@/lib/config";
-import { replaceUrlsAndEmailsWithAnchors } from "@/lib/utils";
+import { replaceUrlsAndEmailsWithAnchors } from "@/lib/specialUtils";
 import { FAQ_DATA } from "@/lib/data";
 
 const AccordionSection = ({

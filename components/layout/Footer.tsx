@@ -19,7 +19,12 @@ import SystemStatus from "../shared/SystemStatus";
 import { getLocalStorageItem, setLocalStorageItem } from "@/lib/utils";
 import { STATUS_CHECK_CACHE_KEY } from "@/lib/data";
 
-const FooterNavLinks = ({ variation, className }) => {
+interface FooterNavLinksProps {
+  variation: string;
+  className?: string;
+}
+
+const FooterNavLinks = ({ variation, className }: FooterNavLinksProps) => {
   const { heading, links } = FOOTER_NAV_LINKS_META[variation];
   return (
     <div className={className}>
@@ -68,7 +73,8 @@ const Footer = () => {
     };
     const checkCache = () => {
       const statusCheckObj = getLocalStorageItem(STATUS_CHECK_CACHE_KEY);
-      const { timestamp, data } = statusCheckObj || {};
+      const { timestamp, data }: { timestamp: number; data: string } =
+        statusCheckObj ? JSON.parse(statusCheckObj) : {};
       if (statusCheckObj && timestamp && data) {
         const currentTime = new Date().getTime();
         const expirationTime = 5 * 60 * 1000; // 5 minutes in milliseconds
