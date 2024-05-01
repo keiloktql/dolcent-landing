@@ -1,10 +1,18 @@
 import axios from "axios";
-import { SYSTEM_STATUS_TYPE } from "@/lib/enum";
+import { SYSTEM_STATUS_ENUM } from "@/lib/enum";
+import { NextApiRequest, NextApiResponse } from "next";
 
 /**
- * list of status type from uptime: https://betterstack.com/docs/uptime/api/list-all-existing-monitors/
+ * Gets the system status for Dolcent
+ * Note: list of status type from uptime: https://betterstack.com/docs/uptime/api/list-all-existing-monitors/
+ *
+ * @param {NextApiRequest} req
+ * @param {NextApiResponse} res
  */
-export default async function handler(req, res) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method !== "GET") {
     res.status(500).json({ message: "HTTP method not supported" });
   }
@@ -36,11 +44,11 @@ export default async function handler(req, res) {
       return status === "up";
     });
     if (down) {
-      data = SYSTEM_STATUS_TYPE.DOWN;
+      data = SYSTEM_STATUS_ENUM.DOWN;
     } else if (paused && !down && !up) {
-      data = SYSTEM_STATUS_TYPE.PAUSED;
+      data = SYSTEM_STATUS_ENUM.PAUSED;
     } else {
-      data = SYSTEM_STATUS_TYPE.UP;
+      data = SYSTEM_STATUS_ENUM.UP;
     }
   } catch (error) {
     if (error.message && error.message === "NO_MONITORS") {

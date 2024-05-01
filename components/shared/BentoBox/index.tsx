@@ -2,10 +2,10 @@
 /* eslint-disable import/no-dynamic-require */
 import React from "react";
 import Image from "next/image";
-import { BENTO_BOX_TYPE } from "@/lib/enum";
+import { BENTO_BOX_ENUM } from "@/lib/enum";
 
 const BentoBox = ({
-  type = BENTO_BOX_TYPE.LONG_TEXT_LEFT,
+  type = BENTO_BOX_ENUM.LONG_TEXT_LEFT,
   imageHref,
   heading,
   desc,
@@ -13,7 +13,7 @@ const BentoBox = ({
   className,
   textClassName
 }) => {
-  if (type === BENTO_BOX_TYPE.LONG_TEXT_LEFT) {
+  if (type === BENTO_BOX_ENUM.LONG_TEXT_LEFT) {
     return (
       <div
         className={`flex pt-16 md:pt-0 flex-col md:flex-row justify-between px-20 lg:px-40 rounded-xl mt-4 ${className}`}
@@ -32,7 +32,7 @@ const BentoBox = ({
       </div>
     );
   }
-  if (type === BENTO_BOX_TYPE.LONG_TEXT_RIGHT) {
+  if (type === BENTO_BOX_ENUM.LONG_TEXT_RIGHT) {
     return (
       <div
         className={`flex pt-16 md:pt-0 flex-col-reverse md:flex-row justify-between px-20 lg:px-40 bg-gray-100 rounded-xl mt-4 ${className}`}
@@ -56,7 +56,7 @@ const BentoBox = ({
   return (
     <div className="flex flex-col md:flex-row">
       {content.map((oneContent, index) => {
-        if (oneContent.type === BENTO_BOX_TYPE.SMALL_TEXT_LEFT) {
+        if (oneContent.type === BENTO_BOX_ENUM.SMALL_TEXT_LEFT) {
           return (
             <div
               key={index}

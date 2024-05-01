@@ -5,8 +5,10 @@ import {
   GITHUB_URL,
   PLAY_STORE_LISTING_URL,
   REALM_ENCRYPTION_URL,
-  SUPPORT_EMAIL
+  SUPPORT_EMAIL,
+  UPTIME_URL
 } from "./config";
+import { FOOTER_NAV_LINKS_ENUM } from "./enum";
 
 // LOCALSTORAGE KEY
 export const STATUS_CHECK_CACHE_KEY = "STATUS_CHECK_CACHE_KEY";
@@ -139,4 +141,57 @@ export const COMMAND_MENU_DATA = {
       })()
     }
   ]
+};
+
+export const FOOTER_NAV_LINKS_META = {
+  [FOOTER_NAV_LINKS_ENUM.SUPPORT]: {
+    heading: "Support",
+    links: [
+      {
+        text: "FAQ",
+        href: "/faq"
+      },
+      {
+        text: "Contact",
+        href: "/faq#contact"
+      },
+      {
+        text: "System Status",
+        href: UPTIME_URL,
+        external: true
+      },
+      {
+        text: "Feature Request",
+        href: `${CANNY_URL}/feature-request`,
+        external: true
+      }
+    ]
+  },
+  [FOOTER_NAV_LINKS_ENUM.PRODUCT]: {
+    heading: "Product",
+    links: [
+      {
+        text: "Roadmap",
+        href: CANNY_URL,
+        external: true
+      },
+      {
+        text: "Sitemap",
+        href: "/sitemap"
+      }
+    ]
+  },
+  [FOOTER_NAV_LINKS_ENUM.LEGAL]: {
+    heading: "Legal",
+    links: [
+      {
+        text: "Terms and Conditions",
+        href: "/terms-and-conditions"
+      },
+      {
+        text: "Privacy Policy",
+        href: "/privacy-policy"
+      }
+    ]
+  }
 };

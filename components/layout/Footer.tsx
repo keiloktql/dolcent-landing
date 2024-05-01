@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { Icon } from "@iconify/react";
-import { FOOTER_NAV_LINKS_META, SYSTEM_STATUS_TYPE } from "@/lib/enum";
+import { FOOTER_NAV_LINKS_ENUM, SYSTEM_STATUS_ENUM } from "@/lib/enum";
 import IOSBadge from "@/public/assets/get-it-on/ios-badge.png";
 import AndroidBadge from "@/public/assets/get-it-on/android-badge.png";
 import BMCBadge from "@/public/assets/marketing/bmc-button.png";
@@ -16,11 +16,11 @@ import {
   PLAY_STORE_LISTING_URL
 } from "@/lib/config";
 import { getLocalStorageItem, setLocalStorageItem } from "@/lib/utils";
-import { STATUS_CHECK_CACHE_KEY } from "@/lib/data";
+import { FOOTER_NAV_LINKS_META, STATUS_CHECK_CACHE_KEY } from "@/lib/data";
 import SystemStatus from "../shared/SystemStatus";
 
 interface FooterNavLinksProps {
-  variation: string;
+  variation: FOOTER_NAV_LINKS_ENUM;
   className?: string;
 }
 
@@ -88,7 +88,7 @@ const Footer = () => {
     };
     (async () => {
       setSystemStatusLoading(true);
-      let tempSystemStatus = SYSTEM_STATUS_TYPE.PAUSED;
+      let tempSystemStatus = SYSTEM_STATUS_ENUM.PAUSED;
       try {
         const usedCache = checkCache();
         if (usedCache) {
@@ -97,7 +97,7 @@ const Footer = () => {
         const response = await axios.get(`${API_URL}/system-status`);
         tempSystemStatus = response?.data?.data;
         if (!tempSystemStatus) {
-          tempSystemStatus = SYSTEM_STATUS_TYPE.DOWN;
+          tempSystemStatus = SYSTEM_STATUS_ENUM.DOWN;
         }
         const currentTime = new Date().getTime();
         setLocalStorageItem(STATUS_CHECK_CACHE_KEY, {
@@ -145,10 +145,19 @@ const Footer = () => {
         </div>
         <div className="flex flex-col md:flex-row md:justify-center">
           <div className="flex flex-col">
-            <FooterNavLinks className="mt-8 md:mt-0" variation="PRODUCT" />
-            <FooterNavLinks className="mt-8" variation="SUPPORT" />
+            <FooterNavLinks
+              className="mt-8 md:mt-0"
+              variation={FOOTER_NAV_LINKS_ENUM.PRODUCT}
+            />
+            <FooterNavLinks
+              className="mt-8"
+              variation={FOOTER_NAV_LINKS_ENUM.SUPPORT}
+            />
           </div>
-          <FooterNavLinks className="mt-8 md:mt-0 md:ml-8" variation="LEGAL" />
+          <FooterNavLinks
+            className="mt-8 md:mt-0 md:ml-8"
+            variation={FOOTER_NAV_LINKS_ENUM.LEGAL}
+          />
         </div>
         <div className="w-fit mt-8 md:mt-0 md:ml-10 flex flex-col items-end">
           <a

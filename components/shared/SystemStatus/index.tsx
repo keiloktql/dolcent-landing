@@ -5,7 +5,7 @@ import SSUp from "@/public/assets/system-status/up.png";
 import SSDown from "@/public/assets/system-status/down.png";
 import SSPaused from "@/public/assets/system-status/paused.png";
 import { Skeleton } from "@/components/shared/Skeleton";
-import { SYSTEM_STATUS_TYPE } from "@/lib/enum";
+import { SYSTEM_STATUS_ENUM } from "@/lib/enum";
 import { UPTIME_URL } from "@/lib/config";
 import {
   Tooltip,
@@ -26,11 +26,11 @@ const SystemStatus = ({ systemStatus, loading, className }) => {
   let img = SSPaused;
   let text = "All systems checks paused.";
 
-  if (systemStatus === SYSTEM_STATUS_TYPE.DOWN) {
+  if (systemStatus === SYSTEM_STATUS_ENUM.DOWN) {
     img = SSDown;
     text = "System(s) down.";
   }
-  if (systemStatus === SYSTEM_STATUS_TYPE.UP) {
+  if (systemStatus === SYSTEM_STATUS_ENUM.UP) {
     img = SSUp;
     text = "All systems operational.";
   }
