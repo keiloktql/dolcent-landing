@@ -19,7 +19,20 @@ import {
   SUPPORT_EMAIL
 } from "@/lib/config";
 import { FAQ_DATA } from "@/lib/data";
-import { replaceUrlsAndEmailsWithAnchors } from "@/lib/SpecialUtils";
+import useTextReplacement from "@/lib/hooks";
+
+const OneFAQContent = ({ content }) => {
+  const formattedContent = useTextReplacement(content, {
+    [SUPPORT_EMAIL]: SUPPORT_EMAIL,
+    [BUY_ME_A_COFFEE_URL]: "buy me a coffee.",
+    [REALM_ENCRYPTION_URL]: "Realm",
+    [PLAY_STORE_LISTING_URL]: "Google Play Store",
+    [APP_STORE_LISTING_URL]: "Apple App Store",
+    [GITHUB_URL]: "Kei Lok",
+    [CANNY_URL]: "Canny"
+  });
+  return formattedContent;
+};
 
 const AccordionSection = ({
   heading,
@@ -28,6 +41,7 @@ const AccordionSection = ({
   selectedAccordion,
   setSelectedAccordion
 }) => {
+  console.log(contents);
   return (
     <div className={className}>
       <h2 className="text-display-xs font-bold">{heading}</h2>
@@ -49,15 +63,7 @@ const AccordionSection = ({
             {oneFaq.qns}
           </AccordionTrigger>
           <AccordionContent>
-            {replaceUrlsAndEmailsWithAnchors(oneFaq.ans, {
-              [SUPPORT_EMAIL]: SUPPORT_EMAIL,
-              [BUY_ME_A_COFFEE_URL]: "buy me a coffee.",
-              [REALM_ENCRYPTION_URL]: "Realm",
-              [PLAY_STORE_LISTING_URL]: "Google Play Store",
-              [APP_STORE_LISTING_URL]: "Apple App Store",
-              [GITHUB_URL]: "Kei Lok",
-              [CANNY_URL]: "Canny"
-            })}
+            <OneFAQContent content={oneFaq.ans} />
           </AccordionContent>
         </AccordionItem>
       ))}
