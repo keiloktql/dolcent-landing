@@ -16,7 +16,7 @@ const BentoBox = ({
   if (type === BENTO_BOX_TYPE.LONG_TEXT_LEFT) {
     return (
       <div
-        className={`flex pt-16 md:pt-0 flex-col md:flex-row justify-between px-20 lg:px-40 bg-gray-100 rounded-xl mt-4 ${className}`}
+        className={`flex pt-16 md:pt-0 flex-col md:flex-row justify-between px-20 lg:px-40 rounded-xl mt-4 ${className}`}
       >
         <div className="flex flex-col justify-center md:mr-4">
           <h1

@@ -24,7 +24,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", "lib/utils.ts"],
+    "**/*.tsx", "lib/utils.ts", "tailwind.config.ts"],
   "exclude": [
     "node_modules"
   ]
