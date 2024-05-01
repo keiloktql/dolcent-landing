@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/shared/Sheet";
-import CommandMenu from "@/components/shared/CommandMenu";
+import MobileHeader from "./MobileHeader";
+import DesktopHeader from "./DesktopHeader";
 
 const Header = () => {
   const [logoAnimation, setLogoAnimation] = useState(true);
@@ -25,39 +24,8 @@ const Header = () => {
             Dolcent
           </Link>
         </div>
-
-        <Sheet>
-          <SheetTrigger>
-            <Menu className="h-6 md:hidden w-6" />
-          </SheetTrigger>
-          <SheetContent side="right">
-            <nav className="flex flex-col items-center justify-center">
-              <Link
-                className="font-semibold text-gray-600 hover:underline"
-                href="/"
-              >
-                Home
-              </Link>
-              <Link
-                className="mt-4 font-semibold text-gray-600  hover:underline"
-                href="/faq"
-              >
-                FAQ
-              </Link>
-            </nav>
-          </SheetContent>
-        </Sheet>
-        <nav className="w-full h-full justify-between items-center hidden md:flex">
-          <Link
-            className="font-semibold text-gray-600  hover:underline"
-            href="/faq"
-          >
-            FAQ
-          </Link>
-          <div className="w-full flex-1 md:w-auto md:flex-none">
-            <CommandMenu />
-          </div>
-        </nav>
+        <MobileHeader />
+        <DesktopHeader />
       </div>
     </header>
   );
