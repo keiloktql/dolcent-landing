@@ -19,10 +19,10 @@ import {
   SUPPORT_EMAIL
 } from "@/lib/config";
 import { FAQ_DATA } from "@/lib/data";
-import useTextReplacement from "@/lib/hooks";
+import useTextWithAnchors from "@/lib/hooks";
 
 const OneFAQContent = ({ content }) => {
-  const formattedContent = useTextReplacement(content, {
+  const formattedContent = useTextWithAnchors(content, {
     [SUPPORT_EMAIL]: SUPPORT_EMAIL,
     [BUY_ME_A_COFFEE_URL]: "buy me a coffee.",
     [REALM_ENCRYPTION_URL]: "Realm",

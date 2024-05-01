@@ -14,7 +14,7 @@ import {
  * @param {object} linkMap Map of links to be replaced.
  * @returns Tuple containing the text and a function to set the text.
  */
-const useTextReplacement = (
+const useTextWithAnchors = (
   initialText: (string | Element)[],
   linkMap: Record<string, string> = {}
 ): JSX.Element => {
@@ -57,4 +57,4 @@ const useTextReplacement = (
   return text;
 };
 
-export default useTextReplacement;
+export default useTextWithAnchors;
