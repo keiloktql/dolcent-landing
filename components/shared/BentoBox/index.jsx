@@ -2,7 +2,7 @@
 /* eslint-disable import/no-dynamic-require */
 import React from "react";
 import Image from "next/image";
-import { BENTO_BOX_TYPE } from "@/config/enum";
+import { BENTO_BOX_TYPE } from "@/lib/enum";
 
 const BentoBox = ({
   type = BENTO_BOX_TYPE.LONG_TEXT_LEFT,

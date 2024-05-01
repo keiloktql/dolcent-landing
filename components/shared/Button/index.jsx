@@ -1,6 +1,6 @@
 /* eslint-disable react/button-has-type */
 import React from "react";
-import { BTN_META } from "@/config/enum";
+import { BTN_META } from "@/lib/enum";
 
 const Button = ({
   disabled = false,

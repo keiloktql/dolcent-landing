@@ -10,7 +10,7 @@ import {
   CommandList,
   CommandSeparator
 } from "@/components/shared/Command";
-import { COMMAND_MENU_DATA } from "@/config/data";
+import { COMMAND_MENU_DATA } from "@/lib/data";
 
 const CommandMenu = () => {
   const router = useRouter();

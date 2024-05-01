@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import ErrorBoundary from "@/components/pages/ErrorBoundary";
-import { ENVIRONMENT, FIREBASE_CONFIG } from "@/config/general";
+import { ENVIRONMENT, FIREBASE_CONFIG } from "@/lib/config";
 import { TooltipProvider } from "@/components/shared/Tooltip";
 
 export default function App({ Component, pageProps }) {

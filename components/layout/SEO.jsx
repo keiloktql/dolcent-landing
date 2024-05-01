@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import { HOST_URL } from "@/config/general";
+import { HOST_URL } from "@/lib/config";
 
 const SEO = ({
   title = "Dolcent",

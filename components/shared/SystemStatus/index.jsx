@@ -5,8 +5,8 @@ import SSUp from "@/public/assets/system-status/up.png";
 import SSDown from "@/public/assets/system-status/down.png";
 import SSPaused from "@/public/assets/system-status/paused.png";
 import { Skeleton } from "@/components/shared/Skeleton";
-import { SYSTEM_STATUS_TYPE } from "@/config/enum";
-import { UPTIME_URL } from "@/config/general";
+import { SYSTEM_STATUS_TYPE } from "@/lib/enum";
+import { UPTIME_URL } from "@/lib/config";
 import {
   Tooltip,
   TooltipContent,

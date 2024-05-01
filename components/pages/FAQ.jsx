@@ -17,9 +17,9 @@ import {
   PLAY_STORE_LISTING_URL,
   REALM_ENCRYPTION_URL,
   SUPPORT_EMAIL
-} from "@/config/general";
-import { replaceUrlsAndEmailsWithAnchors } from "@/utils/utils";
-import { FAQ_DATA } from "@/config/data";
+} from "@/lib/config";
+import { replaceUrlsAndEmailsWithAnchors } from "@/lib/utils";
+import { FAQ_DATA } from "@/lib/data";
 
 const AccordionSection = ({
   heading,

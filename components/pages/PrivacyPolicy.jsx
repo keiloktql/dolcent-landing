@@ -1,6 +1,6 @@
 /* eslint-disable arrow-body-style */
 import MainLayout from "@/components/layout/MainLayout";
-import { HOST_URL, SUPPORT_EMAIL } from "@/config/general";
+import { HOST_URL, SUPPORT_EMAIL } from "@/lib/config";
 import DocumentSection from "../shared/DocumentSection";
 
 const PrivacyPolicyPage = () => {

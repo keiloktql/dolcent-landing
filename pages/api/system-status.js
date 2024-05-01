@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SYSTEM_STATUS_TYPE } from "@/config/enum";
+import { SYSTEM_STATUS_TYPE } from "@/lib/enum";
 
 /**
  * list of status type from uptime: https://betterstack.com/docs/uptime/api/list-all-existing-monitors/

@@ -3,7 +3,17 @@ import Header from "./Header";
 import Footer from "./Footer";
 import SEO from "./SEO";
 
-const MainLayout = ({ children, title, className }) => (
+interface MainLayoutProps {
+  children: any;
+  title: string;
+  className: string;
+}
+
+const MainLayout: React.FC<MainLayoutProps> = ({
+  children,
+  title,
+  className
+}) => (
   <>
     <SEO title={title} />
     <Header />

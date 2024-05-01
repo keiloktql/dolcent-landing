@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { Icon } from "@iconify/react";
-import { FOOTER_NAV_LINKS_META, SYSTEM_STATUS_TYPE } from "@/config/enum";
+import { FOOTER_NAV_LINKS_META, SYSTEM_STATUS_TYPE } from "@/lib/enum";
 import IOSBadge from "@/public/assets/get-it-on/ios-badge.png";
 import AndroidBadge from "@/public/assets/get-it-on/android-badge.png";
 import BMCBadge from "@/public/assets/marketing/bmc-button.png";
@@ -14,10 +14,10 @@ import {
   APP_STORE_LISTING_URL,
   BUY_ME_A_COFFEE_URL,
   PLAY_STORE_LISTING_URL
-} from "@/config/general";
+} from "@/lib/config";
 import SystemStatus from "../shared/SystemStatus";
-import { getLocalStorageItem, setLocalStorageItem } from "@/utils/utils";
-import { STATUS_CHECK_CACHE_KEY } from "@/config/data";
+import { getLocalStorageItem, setLocalStorageItem } from "@/lib/utils";
+import { STATUS_CHECK_CACHE_KEY } from "@/lib/data";
 
 const FooterNavLinks = ({ variation, className }) => {
   const { heading, links } = FOOTER_NAV_LINKS_META[variation];

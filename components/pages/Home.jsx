@@ -5,12 +5,9 @@ import MainLayout from "@/components/layout/MainLayout";
 import IOSBadge from "@/public/assets/get-it-on/ios-badge.png";
 import AndroidBadge from "@/public/assets/get-it-on/android-badge.png";
 import SCOverview from "@/public/assets/app/overview.png";
-import {
-  APP_STORE_LISTING_URL,
-  PLAY_STORE_LISTING_URL
-} from "@/config/general";
+import { APP_STORE_LISTING_URL, PLAY_STORE_LISTING_URL } from "@/lib/config";
 import BentoBox from "../shared/BentoBox";
-import { OVERVIEW_FEATURES_LIST } from "@/config/enum";
+import { OVERVIEW_FEATURES_LIST } from "@/lib/enum";
 
 const HomePage = () => {
   const [shiningEffect, setShiningEffect] = useState(true);
