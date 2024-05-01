@@ -41,7 +41,6 @@ const AccordionSection = ({
   selectedAccordion,
   setSelectedAccordion
 }) => {
-  console.log(contents);
   return (
     <div className={className}>
       <h2 className="text-display-xs font-bold">{heading}</h2>
