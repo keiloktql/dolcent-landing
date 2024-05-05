@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import MobileHeader from "./MobileHeader";
-import DesktopHeader from "./DesktopHeader";
+import MobileHeader from "@/components/layout/MobileHeader";
+import DesktopHeader from "@/components/layout/DesktopHeader";
 
 const Header = () => {
   const [logoAnimation, setLogoAnimation] = useState(true);

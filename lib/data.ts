@@ -7,8 +7,8 @@ import {
   REALM_ENCRYPTION_URL,
   SUPPORT_EMAIL,
   UPTIME_URL
-} from "./config";
-import { FOOTER_NAV_LINKS_ENUM } from "./enum";
+} from "@/lib/config";
+import { FOOTER_NAV_LINKS_ENUM } from "@/lib/enum";
 
 // LOCALSTORAGE KEY
 export const STATUS_CHECK_CACHE_KEY = "STATUS_CHECK_CACHE_KEY";

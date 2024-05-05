@@ -1,5 +1,3 @@
-import { CANNY_URL, UPTIME_URL } from "./config";
-
 export enum BENTO_BOX_ENUM {
   LONG_TEXT_LEFT,
   LONG_TEXT_RIGHT,

@@ -17,7 +17,7 @@ import {
 } from "@/lib/config";
 import { getLocalStorageItem, setLocalStorageItem } from "@/lib/utils";
 import { FOOTER_NAV_LINKS_META, STATUS_CHECK_CACHE_KEY } from "@/lib/data";
-import SystemStatus from "../shared/SystemStatus";
+import SystemStatus from "@/components/shared/SystemStatus";
 
 interface FooterNavLinksProps {
   variation: FOOTER_NAV_LINKS_ENUM;

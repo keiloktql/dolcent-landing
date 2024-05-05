@@ -1,7 +1,7 @@
 /* eslint-disable arrow-body-style */
 import React from "react";
 import Link from "next/link";
-import MainLayout from "../layout/MainLayout";
+import MainLayout from "@/components/layout/MainLayout";
 
 const SitemapPage = () => {
   return (
