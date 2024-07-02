@@ -33,6 +33,12 @@ export const setLocalStorageItem = (
  * @returns {string | null}
  */
 export const getLocalStorageItem = (key: string): string | null => {
+  if (typeof window === "undefined") {
+    console.error(
+      "Error getting localStorage item: not possible on server side"
+    );
+    return null;
+  }
   try {
     const item = localStorage.getItem(key);
     return item || null;

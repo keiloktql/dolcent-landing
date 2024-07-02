@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Icon } from "@iconify/react";
 import get from "lodash/get";
 import {
@@ -6,6 +5,8 @@ import {
   EMAIL_OR_HTTPS_INCLUDED_REGEX,
   HTTPS_INCLUDED_REGEX
 } from "@/lib/config";
+import { useToast } from "@/components/shared/Toast/use-toast";
+import { TOAST_ENUM } from "./enum";
 
 /**
  * Hook to replace URLs and emails with anchor tags.
@@ -58,3 +59,32 @@ const useTextWithAnchors = (
 };
 
 export default useTextWithAnchors;
+
+export const useCustomToast = () => {
+  const { toast } = useToast();
+
+  const trigger = (variant?: TOAST_ENUM, desc?: string) => {
+    switch (variant) {
+      case TOAST_ENUM.SUCCESS:
+        return toast({
+          variant: "default",
+          title: "Success!",
+          description: desc || "Operation successful."
+        });
+      case TOAST_ENUM.ERROR:
+        return toast({
+          variant: "destructive",
+          title: "Uh oh! Something went wrong.",
+          description: desc || "There was a problem with your request."
+        });
+
+      default:
+        return toast({
+          variant: "destructive",
+          title: "Uh oh! Something went wrong.",
+          description: "There was a problem with your request."
+        });
+    }
+  };
+  return trigger;
+};

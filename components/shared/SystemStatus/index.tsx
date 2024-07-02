@@ -43,6 +43,7 @@ const SystemStatus = ({ systemStatus, loading, className }) => {
           rel="noopener noreferrer"
           target="_blank"
           className={`flex hover:underline cursor-pointer w-fit ${className}`}
+          suppressHydrationWarning
         >
           <Image
             style={{ objectFit: "contain" }}

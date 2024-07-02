@@ -1,23 +1,24 @@
+"use client";
+
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable no-unused-vars */
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import axios from "axios";
 import { Icon } from "@iconify/react";
-import { FOOTER_NAV_LINKS_ENUM, SYSTEM_STATUS_ENUM } from "@/lib/enum";
+import { FOOTER_NAV_LINKS_ENUM } from "@/lib/enum";
 import IOSBadge from "@/public/assets/get-it-on/ios-badge.png";
 import AndroidBadge from "@/public/assets/get-it-on/android-badge.png";
 import BMCBadge from "@/public/assets/marketing/bmc-button.png";
 import {
-  API_URL,
   APP_STORE_LISTING_URL,
   BUY_ME_A_COFFEE_URL,
   PLAY_STORE_LISTING_URL
 } from "@/lib/config";
-import { getLocalStorageItem, setLocalStorageItem } from "@/lib/utils";
 import { FOOTER_NAV_LINKS_META, STATUS_CHECK_CACHE_KEY } from "@/lib/data";
 import SystemStatus from "@/components/shared/SystemStatus";
+import { useSystemStatus } from "@/lib/api/queries";
+import { getLocalStorageItem } from "@/lib/utils";
 
 interface FooterNavLinksProps {
   variation: FOOTER_NAV_LINKS_ENUM;
@@ -64,53 +65,19 @@ const FooterNavLinks = ({ variation, className }: FooterNavLinksProps) => {
 };
 
 const Footer = () => {
-  const [systemStatus, setSystemStatus] = useState(null);
-  const [systemStatusLoading, setSystemStatusLoading] = useState(true);
+  const { data, isLoading } = useSystemStatus();
+  const [isClient, setIsClient] = useState(false);
+  const cachedSystemStatus = JSON.parse(
+    getLocalStorageItem(STATUS_CHECK_CACHE_KEY)
+  )?.data;
   useEffect(() => {
-    const updateData = (data, loading) => {
-      setSystemStatus(data);
-      setSystemStatusLoading(loading);
-    };
-    const checkCache = () => {
-      const statusCheckObj = getLocalStorageItem(STATUS_CHECK_CACHE_KEY);
-      const { timestamp, data }: { timestamp: number; data: string } =
-        statusCheckObj ? JSON.parse(statusCheckObj) : {};
-      if (statusCheckObj && timestamp && data) {
-        const currentTime = new Date().getTime();
-        const expirationTime = 5 * 60 * 1000; // 5 minutes in milliseconds
-        const expired = currentTime - timestamp >= expirationTime;
-        if (!expired) {
-          updateData(data, false);
-          return true;
-        }
-      }
-      return false;
-    };
-    (async () => {
-      setSystemStatusLoading(true);
-      let tempSystemStatus = SYSTEM_STATUS_ENUM.PAUSED;
-      try {
-        const usedCache = checkCache();
-        if (usedCache) {
-          return;
-        }
-        const response = await axios.get(`${API_URL}/system-status`);
-        tempSystemStatus = response?.data?.data;
-        if (!tempSystemStatus) {
-          tempSystemStatus = SYSTEM_STATUS_ENUM.DOWN;
-        }
-        const currentTime = new Date().getTime();
-        setLocalStorageItem(STATUS_CHECK_CACHE_KEY, {
-          data: tempSystemStatus,
-          timestamp: currentTime
-        });
-      } catch (error) {
-        console.log(error);
-      }
-      updateData(tempSystemStatus, false);
-    })();
+    setIsClient(true);
   }, []);
 
+  // to resolve the react rehydration error
+  if (!isClient) {
+    return null;
+  }
   return (
     <footer className="bg-gray-25 px-6 sm:px-16">
       {/* Top */}
@@ -126,8 +93,8 @@ const Footer = () => {
             Supercharge your Finance Tracking ⚡
           </p>
           <SystemStatus
-            systemStatus={systemStatus}
-            loading={systemStatusLoading}
+            systemStatus={data?.data || cachedSystemStatus}
+            loading={isLoading}
             className="mt-4"
           />
           <a
