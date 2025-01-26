@@ -1,3 +1,4 @@
+import { APP_STORE_LINK_ID } from "@/lib/config";
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
@@ -5,6 +6,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta name="description" content="Make your Dollars and Cents count" />
+        <meta name="apple-itunes-app" content={`app-id=${APP_STORE_LINK_ID}`} />
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="icon"
